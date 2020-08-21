@@ -16,17 +16,17 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  // Getting data from body  
+  // Get data from body  
   const { title, url, techs } = request.body
   const likes = 0
   
-  // Setting one specific repository 
+  // Set one specific repository, with a new uuid and 0 likes 
   const repository = { id: uuid(), title, url, techs, likes }
   
-  // Pushing to array 
+  // Push one element to array 
   repositories.push(repository)
 
-  // Returning the created repository 
+  // Return a json from the brand new repository 
   return response.json(repository)
 });
 
